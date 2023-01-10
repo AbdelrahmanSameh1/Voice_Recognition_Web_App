@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style sheet/style.css" />
+  </head>
+
+  <body>
+    
+    <div class="upper_div">
+      
+      <form class="form" action="{{url_for('audio')}}" method="post">
+        <button
+          class="prediction_button"
+          id="prediction_button"
+          type="submit"
+          onclick="clicked_action()"
+        ></button>
+        <div class="label_sign_container">
+          <div class="prediction" value="{{prediction}}">
+            
+          </div>
+          <div class="right_wrong_sign"></div>
+          
+        </div>
+      </form>
+      
+      <script src="../static/javaScript/main.js"></script>
+    </div>
+
+    
+
+    <div class="center_div">
+      
+      {% if spectro %}
+      
+          <div class="grid-container">
+            
+            <div class="gallery item1">
+              <a target="_blank" href="static/pie.png">
+                <img src="{{ url_for('static',filename='pie.png') }}"   alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">Pie</div>
+            </div>
+            <div class="gallery item2">
+              <a target="_blank" href="static/spec_features.png">
+                <img src="{{ url_for('static',filename='spec_features.png') }}"   alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">Speaker</div>
+            </div>
+            
+
+            <div class="gallery item3">
+              <a target="_blank" href="static/spec_Rolloff.png">
+                <img src="{{ url_for('static',filename='spec_Rolloff.png') }}"   alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">Speaker</div>
+            </div>
+
+            <!-- <div class="gallery item4 ">
+              <a target="_blank" href="static/spectro.png">
+                <img src="{{ url_for('static',filename='spectro.png') }}" alt="Cinque Terre" width="800" height="600">
+              </a>
+              <div class="desc">Spectogram</div>
+            </div> -->
+            <div class="gallery item4 ">
+              <a target="_blank" href="static/chroma.png">
+                <img src="{{ url_for('static',filename='chroma.png') }}" alt="Cinque Terre" width="800" height="600">
+              </a>
+              <div class="desc">Chromagram</div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- <div class="gallery item5">
+              <a target="_blank" href="static/rolloff.png">
+                <img src="{{ url_for('static',filename='rolloff.png') }}"  alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">Speaker</div>
+            </div> -->
+            <div class="gallery item5">
+              <a target="_blank" href="static/rms.png">
+                <img src="{{ url_for('static',filename='rms.png') }}"  alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">RMS</div>
+            </div>
+            <div class="gallery item6">
+              <a target="_blank" href="static/bars.png">
+                <img src="{{ url_for('static',filename='bars.png') }}"   alt="Cinque Terre" width="800" height="800">
+              </a>
+              <div class="desc">Speaker</div>
+            </div>
+          </div>
+          
+        
+      
+      {% endif %}
+
+    </div>
+  </body>
+</html>
